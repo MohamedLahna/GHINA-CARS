@@ -28,19 +28,16 @@ class Car extends Model
 
     public function getStatutActuelAttribute()
     {
-        //Ila l'admin dar Maintenance
         if (!$this->disponibilite && $this->date_debut_location == null) {
             return 'Maintenance';
         }
 
-        //Calcul dyal dates
         if ($this->date_debut_location && $this->date_fin_location) {
             $now = \Carbon\Carbon::now()->startOfDay();
             $debut = \Carbon\Carbon::parse($this->date_debut_location)->startOfDay();
             $fin = \Carbon\Carbon::parse($this->date_fin_location)->endOfDay();
 
             if ($now->between($debut, $fin)) {
-                // Hna l-qalb: k-n-raj3o l-ktaba fiha l-date dyal l-khlas
                 return 'Louée jusqu\'au ' . \Carbon\Carbon::parse($this->date_fin_location)->format('d/m/Y');
             }
         }
