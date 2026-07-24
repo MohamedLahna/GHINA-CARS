@@ -60,7 +60,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* --- ANIMATION LOGO --- */
 .logo-ghina {
   height: 60px;
   animation: float 3s ease-in-out infinite;
@@ -75,7 +74,6 @@ body {
   100% { transform: translateY(0px) rotate(0deg); }
 }
 
-/* --- SECTIONS LUXE --- */
 .section-premium {
   padding: 80px 0;
   background: white;
@@ -92,7 +90,6 @@ body {
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-/* --- CARDS & BUTTONS --- */
 .glass-effect {
   color: white;
   text-align: left;
@@ -157,7 +154,6 @@ body {
   overflow: hidden;
 }
 
-/* dowara li katdor */
 .carousel-3d-ring {
   position: relative;
   width: 200px;
@@ -166,13 +162,11 @@ body {
   animation: rotateYaw 20s linear infinite;
 }
 
-/* L'animation dyal Yaw */
 @keyframes rotateYaw {
   from { transform: rotateY(0deg); }
   to { transform: rotateY(360deg); }
 }
 
-/* Kola image dyal tomobil */
 .car-item-3d {
   opacity:50%;
   position: absolute;
