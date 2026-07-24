@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
-// Composant dyal Menu lfo9ani
 const NavigationBar = () => {
   return (
     <Navbar className="bg-navy py-3" variant="dark" expand="lg" sticky="top">
