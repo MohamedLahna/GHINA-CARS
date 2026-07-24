@@ -6,13 +6,11 @@ const Hero = ({ onSearch, cars = [] }) => {
   const [dateDeb, setDateDeb] = React.useState("");
   const [dateFin, setDateFin] = React.useState("");
 
-  // --- MODIFICATION HNA ---
-  // Kanqet3o liste bach nakhdo ghir 12 tomobila lwella
+ 
   const limitedCars = cars.slice(0, 8); 
   
-  // Logic bach nfrqo tonobilat f cercle 360 daraja (daba ghadi t7seb ghir 3la 12 max)
   const carCount = limitedCars.length;
-  const radius = 350; // Ch7al b3ad 3la lwst
+  const radius = 350;
 
   const handleClick = () => {
     onSearch(marque, dateDeb, dateFin);
@@ -21,15 +19,12 @@ const Hero = ({ onSearch, cars = [] }) => {
   return (
     <div className="hero-section text-center text-white" style={{ paddingTop: '0px' }}>
       <Container>
-        
-        {/* L-Animation 3D Yaw */}
         <div className="carousel-3d-container">
           <h1 className="fancy-title display-4 fw-bold">
             VOTRE SATISFACTION <br/> EST NOTRE MÉTIER
           </h1>
           
           <div className="carousel-3d-ring">
-            {/* --- KANDIRO MAP 3LA limitedCars FBLAST cars --- */}
             {limitedCars.map((car, index) => {
               const angle = (index * 360) / carCount;
               return (
