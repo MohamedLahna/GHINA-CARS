@@ -1,24 +1,19 @@
-import React, { useState } from 'react'; // Zdna useState hna
+import React, { useState } from 'react';
 import { Container, Row, Col, Pagination } from 'react-bootstrap';
 import CarCard from './CarCard';
 
 
 const CarList = ({ voitures }) => {
-  // --- LOGIC PAGINATION ---
   const [currentPage, setCurrentPage] = useState(1);
-  const carsPerPage = 6; // 6 dyal tomobilat f l page
+  const carsPerPage = 6;
 
-  // 7sab fin katbda o fin katsali kola page
   const indexOfLastCar = currentPage * carsPerPage;
   const indexOfFirstCar = indexOfLastCar - carsPerPage;
   
-  // Had currentCars hiya li fiha ghir 6 tomobilat dyal dik l page
   const currentCars = voitures.slice(indexOfFirstCar, indexOfLastCar);
 
-  // Ch7al mn page 3ndna f total
   const totalPages = Math.ceil(voitures.length / carsPerPage);
 
-  // Fonction bach tla3 lfouq mli tclicki 3la page jdida
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
     window.scrollTo({ top: document.getElementById('vehicules').offsetTop - 100, behavior: 'smooth' });
@@ -42,7 +37,6 @@ const CarList = ({ voitures }) => {
         )}
       </Row>
 
-      {/* --- L-AFFICHAGE DYAL L PAGINATION --- */}
       {totalPages > 1 && (
         <div className="d-flex justify-content-center mt-5">
           <Pagination style={{ '--bs-pagination-bg': '#272435', '--bs-pagination-border-color': '#b88938' }}>
