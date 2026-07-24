@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Storage;
 
 class MarqueController extends Controller
 {
-    //Afficher la liste des marques
     public function index()
     {
         $marques = Marque::all();
@@ -19,7 +18,6 @@ class MarqueController extends Controller
         return view('admin.marques.create');
     }
 
-    //Enregistrer une nouvelle marque
     public function store(Request $request)
     {
         $request->validate([
@@ -37,14 +35,12 @@ class MarqueController extends Controller
         return redirect()->route('admin.marques.index')->with('success', 'La marque a été ajoutée avec succès!');
     }
 
-    // Page Edit
     public function edit($id)
     {
         $marque = Marque::findOrFail($id);
         return view('admin.marques.edit', compact('marque'));
     }
 
-    // Action Update
     public function update(Request $request, $id)
     {
         $marque = Marque::findOrFail($id);
@@ -55,11 +51,9 @@ class MarqueController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            //Mssi7 tswira lqdima mn storage
             if (Storage::disk('public')->exists($marque->image)) {
                 Storage::disk('public')->delete($marque->image);
             }
-            //Tala3 jdida
             $path = $request->file('image')->store('marques', 'public');
             $marque->image = $path;
         }
@@ -69,7 +63,6 @@ class MarqueController extends Controller
 
         return redirect()->route('admin.marques.index')->with('success', 'La marque a été modifiée avec succès!');
     }
-    //Supprimer une marque
     public function destroy($id)
     {
         $marque = Marque::findOrFail($id);
