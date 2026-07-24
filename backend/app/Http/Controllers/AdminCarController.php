@@ -8,20 +8,17 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminCarController extends Controller
 {
-    //Afficher la liste des voitures
     public function index()
     {
         $cars = Car::latest()->get();
         return view('admin.cars.index', compact('cars'));
     }
 
-    //Formulaire dyal l'Ajout
     public function create()
     {
         return view('admin.cars.create');
     }
 
-    //Enregistrer une nouvelle voiture
     public function store(Request $request)
     {
         $request->validate([
@@ -47,14 +44,12 @@ class AdminCarController extends Controller
         Car::create($data);
         return redirect()->route('admin.cars.index')->with('success', 'La voiture a été ajoutée avec succès!');
     }
-    //Formulaire dyal Modification
     public function edit(Car $car)
     {
         return view('admin.cars.edit', compact('car'));
     }
 
     
-    //Mettre à jour (Update)
     public function update(Request $request, Car $car)
     {
         $request->validate([
@@ -82,7 +77,6 @@ class AdminCarController extends Controller
         return redirect()->route('admin.cars.index')->with('success', 'La voiture a été modifiée avec succès!');
     }
 
-    //Supprimer une voiture
     public function destroy(Car $car)
     {
         if ($car->image) Storage::disk('public')->delete($car->image);
