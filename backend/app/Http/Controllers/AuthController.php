@@ -7,12 +7,10 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    //Afficher la page Login
     public function showLogin() {
         return view('admin.login');
     }
 
-    //Traitement dyal Login
     public function login(Request $request) {
         $validated = $request->validate([
             'email' => 'required|email',
@@ -29,7 +27,6 @@ class AuthController extends Controller
         ]);
     }
 
-    //Logout
     public function logout(Request $request) {
         Auth::logout();
         $request->session()->invalidate();
