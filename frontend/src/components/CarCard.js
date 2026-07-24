@@ -4,7 +4,6 @@ import { Card, Button, Badge } from 'react-bootstrap';
 const CarCard = ({ marque, image, prix, etat, statut_actuel }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Fonction bach n7ddo loun dyal lbadge dyal disponibilité
   const getStatutColor = () => {
     if (statut_actuel === 'Disponible') return 'success';
     if (statut_actuel.includes('Louée')) return 'danger';
@@ -17,14 +16,11 @@ const CarCard = ({ marque, image, prix, etat, statut_actuel }) => {
     const message = `Bonjour,\n\nJe souhaite réserver la voiture ${marque}.\nMerci de me recontacter pour confirmer la disponibilité.\n\nPrix affiché : ${prix} DH/Jour.`;
     const body = encodeURIComponent(message);
 
-    // Kanchoufo wach lklyan f télé wla PC
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     if (isMobile) {
-      // F télé mailto kaykhdem mzyan 7it kolchi 3ndo app dyal email
       window.open(`mailto:${email}?subject=${subject}&body=${body}`, '_blank');
     } else {
-      // F PC kansiftoh direct l site dyal Gmail bach ma yw9e3ch lih mouchkil
       const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
       window.open(gmailLink, '_blank');
     }
@@ -51,14 +47,11 @@ const CarCard = ({ marque, image, prix, etat, statut_actuel }) => {
           style={{ height: '100%', objectFit: 'cover' }} 
         />
         
-        {/* Les Badges l fo9aniyin */}
         <div className="position-absolute top-0 w-100 p-3 d-flex justify-content-between align-items-start">
-          {/* Badge dyal l Etat */}
           <Badge bg="info" className="px-2 py-1 shadow-sm">
             {etat}
           </Badge>
 
-          {/* Badge dyal Statut (Disponible wla Louée jusqu'au...) */}
           <Badge bg={getStatutColor()} className="px-3 py-2 shadow-sm fs-6">
             {statut_actuel}
           </Badge>
