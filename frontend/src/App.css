@@ -1,0 +1,248 @@
+.bg-navy {
+  background-color: #272435 !important;
+}
+
+.text-orange {
+  color: #b88938 !important;
+  
+}
+
+.btn-orange {
+  background-color: #b88938 !important;
+  color: white;
+  font-weight: bold;
+  border-color: #b88938 !important;
+}
+
+.btn-orange:hover {
+  background-color: #D4AF37 !important;
+  color: white;
+}
+
+.hero-section {
+  background: linear-gradient(#272435,#343047), url('../public/logoGC.png') center/cover;
+  padding: 100px 0;
+  color: white;
+}
+.text-hero{
+   color: #b88938 !important;
+}
+.bg-hero {
+  background-color: #343047 !important; 
+  border-radius: 45px !important;
+  
+}
+.btn-hero{
+  color: #272435 !important;
+  background-color: #b88938 !important;
+  border-color: #b88938 !important;
+  border-radius: 50px !important;
+  transition: 0.2s;
+}
+
+.btn-hero:active{
+  transform: scale(1.1);
+}
+
+.bg-input{
+  background-color: #272435 !important;
+  border-radius: 30px !important;
+  color: white !important;
+}
+:root {
+  --navy: #0B1B3D;
+  --orange: #F68B1E;
+  --gold: #D4AF37;
+}
+
+body {
+  background-color: #fcfcfc;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* --- ANIMATION LOGO --- */
+.logo-ghina {
+  height: 60px;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 5px 15px rgba(246, 139, 30, 0.3));
+  border-radius: 50%;
+  
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* --- SECTIONS LUXE --- */
+.section-premium {
+  padding: 80px 0;
+  background: white;
+}
+
+.vip-gradient {
+  background: linear-gradient(135deg, #0B1B3D 0%, #162a5a 100%);
+  color: white;
+  border-radius: 30px;
+  padding: 50px;
+  margin-top: -50px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* --- CARDS & BUTTONS --- */
+.glass-effect {
+  color: white;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid #272435;
+  border-radius: 20px;
+  transition: 0.4s ease;
+}
+
+.glass-effect:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(11, 27, 61, 0.15);
+}
+
+.btn-orange-vip {
+  background: var(--orange);
+  color: white;
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-orange-vip:hover {
+  background: var(--navy);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(246, 139, 30, 0.3);
+}
+
+.bg-main{
+  background-color: #343047;
+}
+
+.bg-alliance{
+  background-color: #272435;
+}
+.preamuble{
+  color: #b88938;
+}
+.bg-alliance-zone{
+  background: linear-gradient(#343047, #272435);
+}
+.bg-flotte-zone{
+  background: linear-gradient( #272435, #343047);
+}
+
+.border-flotte{
+  border: 1px solid #b88938;
+  border-radius: 20px;
+  margin-top: -90px;
+}
+
+.carousel-3d-container {
+  perspective: 20000px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* dowara li katdor */
+.carousel-3d-ring {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  transform-style: preserve-3d;
+  animation: rotateYaw 20s linear infinite;
+}
+
+/* L'animation dyal Yaw */
+@keyframes rotateYaw {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+/* Kola image dyal tomobil */
+.car-item-3d {
+  opacity:50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 165, 0, 0.5);
+  backface-visibility: visible;
+}
+
+.car-item-3d img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fancy-title {
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  color: #ffb400;
+  text-shadow: 0 0 20px rgba(0,0,0,0.8), 2px 2px 4px rgba(0,0,0,0.5);
+  pointer-events: none;
+  width: 100%;
+}
+
+
+.footer-card {
+  max-width: 100%;
+  background: #272435;
+  border-radius: 26px;
+  padding: 40px 45px 25px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+  width: 100%;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; 
+}
+
+.footer-heading {
+  color: #d9a06a;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  margin-bottom: 30px;
+  text-align: center;
+  margin-left: 0px;
+  text-transform: uppercase;
+
+}
+
+.footer-text {
+  color: #bfc3d1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0px;
+  text-align: center;
+  
+}
+
+.footer-divider {
+  margin: 25px auto 15px;
+  width: 60%;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-copy {
+  color: #9aa0b3;
+}
