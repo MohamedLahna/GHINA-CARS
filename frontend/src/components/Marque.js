@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Marque = () => {
-  // State bach nstockiw les marques li jaw mn l'API
   const [marqueList, setMarqueList] = useState([]);
 
-  // Fetch data mn Laravel mlli l composant kaytcharga
   useEffect(() => {
     const fetchMarques = async () => {
       try {
@@ -22,13 +20,11 @@ const Marque = () => {
   return (
     <div className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
       <div className="container">
-        {/* Titre */}
         <div className="text-center mb-5">
           <h2 className="fw-bold" style={{ color: '#272435' }}><i>Nos Marques de Prestige</i></h2>
           <i className="text-muted">Découvrez la diversité de notre flotte à travers les plus grands constructeurs mondiaux.</i>
         </div>
 
-        {/* style dyal les logos */}
         <div className="row justify-content-center align-items-center text-center g-4">
           {marqueList.length > 0 ? (
             marqueList.map((marque) => (
@@ -40,7 +36,6 @@ const Marque = () => {
                   onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
                 >
                   <img 
-                    // lien dyal storage Laravel
                     src={`http://localhost:8000/storage/${marque.image}`} 
                     alt={`Logo ${marque.name}`} 
                     className="img-fluid" 
