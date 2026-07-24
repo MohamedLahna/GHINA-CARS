@@ -9,11 +9,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* L Header dima lfo9 */}
         <NavigationBar />
 
         <Routes>
-          {/* L page d'acceuil */}
           <Route path="/" element={<Home />} />
           <Route path="/marques" element={<Marque />} />
         </Routes>
